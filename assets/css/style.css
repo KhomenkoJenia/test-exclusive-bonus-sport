@@ -166,7 +166,7 @@ h4 {
 .main-button button {
   margin-top: 48px;
   padding: 18px 80px;
-  color: #373737;
+  color: #000;
 
   font-size: 24px;
   font-style: normal;
@@ -175,9 +175,19 @@ h4 {
   border-radius: 16px;
 
   cursor: pointer;
-  background-color: #ffcc18;
 
-  box-shadow: 0px 1.573px 3.145px 0px rgba(31, 42, 55, 0.4);
+  --glow-color: rgba(244, 255, 176, 0.662);
+  --glow-spread-color: rgba(255, 253, 123, 0.394);
+  --enhanced-glow-color: rgba(255, 255, 206, 0.648);
+  --btn-color: #ffcc18;
+  border: 0.25em solid var(--glow-color);
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
 }
 .main-button:hover button {
   background-color: #18ff4e;
